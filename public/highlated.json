@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "title": "Calculator",
+        "img": "/assets/Calculator.png",
+        "desc": "A user-friendly calculator that supports both basic arithmetic operations and advanced functions such as square root, trigonometric functions (sin, cos, tan), and more. Designed with a clean interface for efficient and accurate calculations.",
+        "date": "03.07.2025."
+    },
+    {
+        "id": 2,
+        "img": "/assets/Main page.png",
+        "title": "Quiz",
+        "desc": "An interactive quiz app that fetches questions from an API and tests your knowledge with multiple-choice questions. Features smooth navigation and dynamic question rendering.",
+        "date": "21.07.2025."
+    },
+    {
+        "id": 3,
+        "img": "/assets/To Do List.png",
+        "title": "To Do List",
+        "desc": "A clean and minimal task manager that helps you organize your day. Add, edit, and check off tasks with a simple, responsive interface designed for productivity.",
+        "date": "05.07.2025."
+    }
+]

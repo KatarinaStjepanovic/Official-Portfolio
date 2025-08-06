@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import MainPage from './routes/MainPage'
+import MyWork from './routes/MyWork'
+import Contact from './routes/Contact'
+import AboutMe from './routes/AboutMe'
+import Loading from './components/Loading'
+
+
+
+
+class App extends React.Component {
+  constructor() {
+    super()
+   
+    this.state = {
+      loading: false,
+
+    }
+
+    this.loadingAnim = this.loadingAnim.bind(this)
+    this.router = createBrowserRouter([
+  { path: "/", element: < MainPage loadingAnim={this.loadingAnim} /> },
+  { path: "/myWork", element: < MyWork loadingAnim={this.loadingAnim} /> },
+  { path: "/contact", element: < Contact loadingAnim={this.loadingAnim} /> },
+  { path: "/aboutMe", element: < AboutMe loadingAnim={this.loadingAnim} /> }
+]
+)
+  }
+
+  loadingAnim() {
+    this.setState({ loading: true })
+    setTimeout(() => {
+      this.setState({ loading: false })
+
+    }, 3000)
+  }
+
+  render() {
+    return (
+      this.state.loading ? < Loading /> :
+        < RouterProvider router={this.router} />
+    )
+  }
 }
 
-export default App;
+export default App
