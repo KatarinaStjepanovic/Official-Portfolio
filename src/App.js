@@ -34,7 +34,7 @@ class App extends React.Component {
     setTimeout(() => {
       this.setState({ loading: false })
 
-    }, 3000)
+    }, 2500)
   }
 
   render() {
